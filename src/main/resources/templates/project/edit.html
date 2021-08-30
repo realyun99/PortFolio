@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:replace="fragments/head :: head"></th:block>
+  <link rel="stylesheet" th:href="@{/static/assets/css/project-edit.css}" type="text/css"/>
+  <style>
+    h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+<div id="wrapper">
+  <th:block th:replace="fragments/top :: top"></th:block>
+  <div id="main">
+    <article id="work" class="panel">
+      <h2>Project ADD</h2>
+      <form method="post" th:action="|@{/project/save}|" th:object="${project}" enctype="multipart/form-data">
+        <input th:field="*{id}" type="hidden"/>
+        <button class="saveButton" type="submit" th:text="|save|"></button>
+        <div class="mb-3">
+          <label class="form-label" for="date">Progress Date</label>
+          <input type="text" class="form-control" name="date" id="date" th:field="*{date}"
+                 placeholder="프로젝트 진행 날짜를 입력해 주세요">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="title">Project Title</label>
+          <input type="text" class="form-control" name="title" id="title" th:field="*{title}"
+                 placeholder="프로젝트 제목을 입력해 주세요">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="purpose">Project Goal</label>
+          <input type="text" class="form-control" name="purpose" id="purpose" th:field="*{purpose}"
+                 placeholder="프로젝트 목적을 입력해 주세요">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="content">Used Technology</label>
+          <textarea class="form-control" rows="5" name="content" id="content"
+                    th:field="*{technology}"
+                    placeholder="사용한 기술을 입력해 주세요"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="address">Github Address</label>
+          <input type="text" class="form-control" name="address" id="address" th:field="*{address}"
+                 placeholder="Github 주소를 입력해 주세요">
+        </div>
+
+        <!--        첨부파일-->
+        <div class="d-flex mt-3 mb-2 justify-content-between">
+          <label class="form-label m-0 mr-2">Attachment</label>
+          <div>
+            <label for="input-file" id="addFile" class="input-file-button">Upload</label>
+            <input type="file" id="input-file" name="files" style="display: none;" multiple/>
+          </div>
+        </div>
+
+      </form>
+    </article>
+  </div>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+<th:block th:replace="fragments/common-script :: common-script"/>
+</body>
+</html>

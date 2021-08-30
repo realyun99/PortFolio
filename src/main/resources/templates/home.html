@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<head>
+  <th:block th:replace="fragments/head :: head"></th:block>
+  <style>
+    a{text-decoration: none; margin-left: 20px; font-size: 20px;}
+  </style>
+</head>
+
+<body class="is-preload">
+<a sec:authorize="isAnonymous()" type="button" th:href="@{/auth/login}">admin</a>
+<a sec:authorize="isAuthenticated()" type="button" th:href="@{/auth/logout}">logout</a>
+<!-- Wrapper-->
+<div id="wrapper">
+  <th:block th:replace="fragments/top :: top"></th:block>
+  <!-- Main -->
+  <div id="main">
+    <!-- Me -->
+    <article id="home" class="panel intro">
+      <header>
+        <h1 style="font-weight: bold">YunJeong Jang</h1>
+        <p>예비 개발자</p>
+      </header>
+      <a th:href="@{/resume}" class="jumplink pic">
+        <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+        <img th:src="@{/static/assets/css/images/ogu.jpg}" alt=""/>
+      </a>
+    </article>
+  </div>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+<th:block th:replace="fragments/common-script :: common-script"/>
+
+</body>
+</html>

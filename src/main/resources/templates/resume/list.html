@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:replace="fragments/head :: head"></th:block>
+  <link rel="stylesheet" th:href="@{/static/assets/css/resume-list.css}" type="text/css"/>
+  <style>
+    h2 {font-weight: bold; margin-bottom: 50px;}
+    a {text-decoration: none;color: #003366;}
+  </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+  <th:block th:replace="fragments/top :: top"></th:block>
+  <div id="main">
+    <article id="home" class="panel">
+      <header>
+        <h2>About Me</h2>
+      </header>
+      <div class="box">
+        <img class="profile col-3" th:src="@{/static/assets/css/images/ogu.jpg}">
+      </div>
+      <div class="personal">
+        <h3>장윤정  /  Yunjeong Jang</h3>
+        <h5>1999.12.06 / 전라북도</h5>
+        <a th:href="@{/project}" class="jumplink pic">
+          <span class="arrow icon solid fa-chevron-right"><span>&nbsp;&nbsp;show me the project</span></span>
+        </a>
+      </div>
+      <hr>
+      <div class="graduation">
+        <h3>Graduation</h3>
+        <p>(2018)  군산중앙여자고등학교 졸업</p>
+        <p>(2018)  전북대학교 컴퓨터공학부 입학</p>
+        <p>(2022)  전북대학교 컴퓨터공학부 졸업예정</p>
+      </div>
+      <div class="career">
+        <h3>Career</h3>
+        <p>컴퓨터공학부 동아리(alps) 총무 및 스터디 부장 (2019)</p>
+        <p>컴퓨터공학부 총무 (2020)</p>
+        <p>공과대학 댄스팀(MAD) 부장 (2020)</p>
+        <p>교내 해커톤 1등 (2020)</p>
+      </div>
+      <div class="certificate">
+        <h3>Certificate</h3>
+        <p>정보처리기사 자격증</p>
+        <p>토익: </p>
+        <p>토스: </p>
+      </div>
+      <hr>
+      <div class="skill">
+        <h3 style="text-align: right">Skill</h3>
+        <div class="zt-skill-bar"><div data-width="60">C/C++<span>60%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="70">JAVA<span>70%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="70">HTML/CSS<span>70%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="60">Javascript<span>60%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="60">AWS<span>60%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="70">OpenStack<span>70%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="50">DevOps<span>50%</span></div></div>
+        <div class="zt-skill-bar"><div data-width="70">SpringFramework<span>70%</span></div></div>
+      </div>
+      <div class="field">
+        <h3>Fields of Interest</h3>
+        <p>Cloud Computing</p>
+        <p>DevOps</p>
+        <p>WEB</p>
+      </div>
+    </article>
+  </div>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+<th:block th:replace="fragments/common-script :: common-script"/>
+<script th:src="@{/static/assets/js/skill-bar.js}" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:replace="fragments/head :: head"></th:block>
+  <link rel="stylesheet" th:href="@{/static/assets/css/login.css}" type="text/css"/>
+  <style>
+
+  </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+  <th:block th:replace="fragments/top :: top"></th:block>
+  <div id="main">
+    <article id="work" class="panel">
+      <form method="post" th:action="@{/auth/login/process}">
+        <div class="login">
+          <h2>Log-in</h2>
+          <div class="login_id">
+            <h4>Username</h4>
+            <input type="username" name="username" id="username" placeholder="Id">
+          </div>
+          <div class="login_pw">
+            <h4>Password</h4>
+            <input type="password" name="password" id="password" placeholder="Password">
+          </div>
+          <div class="submit">
+            <button type="submit" style="text-align: center">login</button>
+          </div>
+          <!--    로그인 실패 경고-->
+          <div th:if="${error}" class="alert bg--error">
+            <div class="alert__body">
+              <span th:text="${error}" class="text-danger" style="color: #ff1034;font-size: 15px;"></span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </form>
+    </article>
+  </div>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+<th:block th:replace="fragments/common-script :: common-script"/>
+</body>
+</html>

@@ -1,0 +1,35 @@
+server:
+  port: 80
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  servlet:
+    multipart:
+      location: C:/multipart/portfolioyj/
+
+  datasource:
+    url: jdbc:mariadb://localhost/portfolioyj
+    username: yj
+    password: yj_oo_
+    driver-class-name: org.mariadb.jdbc.Driver
+    initialization-mode: always
+
+    jpa:
+      database-platform: org.hibernate.dialect.MariaDB103Dialect
+      hibernate:
+        ddl-auto: create
+      properties:
+        hibernate:
+
+    thymeleaf:
+      cache: false
+
+    devtools:
+      livereload:
+        enabled: true
+      add-properties: true
+      restart:
+        enabled: false

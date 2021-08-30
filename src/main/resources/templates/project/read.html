@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:replace="fragments/head :: head"></th:block>
+  <link rel="stylesheet" th:href="@{/static/assets/css/project-read.css}" type="text/css"/>
+  <style>
+    h2 {font-weight: bold;}
+    label {font-size: 15px;}
+    a {text-decoration: none;color: #003366;}
+  </style>
+</head>
+
+<body class="is-preload">
+<div id="wrapper">
+
+  <th:block th:replace="fragments/top :: top"></th:block>
+  <div id="main">
+    <a th:href="@{/project}" class="jumplink pic" style="margin-left:20px;">
+      <span class="arrow icon solid fa-chevron-left"><span>&nbsp;&nbsp;go to list</span></span>
+    </a>
+    <article id="work" class="panel" th:object="${project}">
+      <h2>Project</h2>
+      <div class="mb-3">
+        <h4 class="title" th:text="*{title}"></h4>
+      </div>
+      <div class="mb-3">
+        <h5 class="date" th:text="*{date}"></h5>
+      </div>
+      <hr class="one">
+      <div class="mb-3">
+        <label>(goal)</label>
+        <h5 class="purpose" th:text="*{purpose}"></h5>
+      </div>
+      <hr class="two">
+      <div class="mb-3">
+        <label>(used technology)</label>
+        <h5 class="technology" th:text="*{technology}"></h5>
+      </div>
+      <hr class="two">
+      <div class="mb-3">
+        <label>(github address)</label>
+        <h5 class="address" th:text="*{address}"></h5>
+      </div>
+      <hr class="two">
+      <div id="downloadList" class="mt-1 text-center">
+        <label>(attachments)</label>
+          <span class="attachment" th:each="a : *{attachments}">
+            <input type="hidden" name="attachments" th:value="${a.id}" th:field="*{attachments}"/>
+            <a class="text-black" th:href="|@{/attachment/}${a.id}|">
+              <div class="file-name" th:text="${a.fileName}"></div>
+            </a>
+          </span>
+      </div>
+
+    </article>
+  </div>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+<th:block th:replace="fragments/common-script :: common-script"/>
+<script th:src="@{/static/assets/js/input.js}" type="text/javascript"></script>
+</body>
+</html>

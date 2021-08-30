@@ -1,0 +1,2 @@
+INSERT INTO `user` (`id`, `create_date`, `enabled`, `expire_date`, `locked`, `name`, `password`, `role`, `super_user`, `username`, `removed`) VALUES
+(1, '2020-08-10 14:00:00', b'1', NULL, b'0', '관리자', '$2a$10$TFMioelYA4AQ90U1.z8iqe1DnDloR0iiZi9IkT3gca2zqegQJf26W', 'ROLE_ADMIN', b'0', 'admin', b'0');

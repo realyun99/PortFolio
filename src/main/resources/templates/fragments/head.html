@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>PortFolio-YJ</title>
+</head>
+<th:block th:fragment="head">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" th:href="@{/static/assets/css/main.css}" type="text/css"/>
+  <link rel="stylesheet" th:href="@{/static/assets/css/fontawesome-all.min.css}" type="text/css"/>
+  <noscript>
+    <link rel="stylesheet" th:href="@{/static/assets/css/noscript.css}" type="text/css"/>
+  </noscript>
+
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+    window.contextRoot = /*[[ @{/} ]]*/'/';
+    window.controllerName = /*[[ ${controllerName} ]]*/'';
+    const numberFormatter = Intl.NumberFormat('en-US');
+    /*]]>*/
+  </script>
+
+</th:block>
+</html>

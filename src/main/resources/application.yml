@@ -1,0 +1,46 @@
+application:
+  version: 1.0
+  title: portfolioyj
+
+server:
+  port: 80
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+
+spring:
+  servlet:
+    multipart:
+      location: C:/portfolioyj/
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  main:
+    web-application-type: servlet
+
+  datasource:
+    url: jdbc:mariadb://localhost/portfolioyj
+    username: yj
+    password: yj_oo_
+    driver-class-name: org.mariadb.jdbc.Driver
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+    open-in-view: true
+
+    thymeleaf:
+      prefix: classpath:templates/
+      suffix: .html
+      cache: true
+
+    devtools:
+      livereload:
+        enabled: false
+      add-properties: false
+      restart:
+        enabled: false

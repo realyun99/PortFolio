@@ -1,0 +1,52 @@
+.title {
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #222222;
+  text-align: center;
+}
+
+.date {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 30px;
+  color: #777777;
+}
+
+.technology {
+  margin-left: 35px;
+  margin-right: 35px;
+  font-size: 30px;
+  color: #777777;
+}
+
+.purpose {
+  margin-left: 35px;
+  margin-right: 35px;
+  font-size: 30px;
+  color: #777777;
+}
+
+.address {
+  margin-left: 35px;
+  margin-right: 35px;
+  font-size: 20px;
+  color: #777777;
+}
+
+.one {
+  margin-top: 0px;
+  border-top: 3px double #777777;
+}
+
+.two {
+  padding: 0px;
+  margin: 10px;
+}
+
+.file-name {
+  margin-left: 35px;
+  margin-right: 35px;
+  font-size: 15px;
+  text-decoration-line: none;
+}

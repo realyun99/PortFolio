@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="fragments/head :: head"></th:block>
+  <style>
+    a {
+      text-decoration: none;
+      color: #363636;
+      font-weight: bold;
+    }
+
+    li {
+      color: #363636;
+    }
+  </style>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+
+<body class="is-preload">
+<!-- Contact -->
+<div id="wrapper">
+  <th:block th:replace="fragments/top :: top"></th:block>
+  <div id="main">
+    <article id="contact" class="panel">
+      <header>
+        <h2 style="font-weight: bold">Contact Me</h2>
+      </header>
+      <a th:href="@{https://mail.google.com/mail/}"><i class="fas fa-envelope"></i></a><span>&nbsp;rhdtls1206@jbnu.ac.kr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <a th:href="@{https://mail.naver.com/}"><i class="fas fa-envelope"></i> </a><span>&nbsp;realyun99@naver.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <a th:href="@{https://www.instagram.com/yj_oo_}"><i class="fab fa-instagram"></i></a><span>&nbsp;&nbsp;yj_oo_</span>
+    </article>
+  </div>
+</div>
+<th:block th:replace="fragments/footer :: footer"></th:block>
+<th:block th:replace="fragments/common-script :: common-script"/>
+</body>
+</html>
